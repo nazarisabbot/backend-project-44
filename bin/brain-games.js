@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-import getNameUser from '../src/cli.js';
+import getAnswerFromUser from '../src/cli.js';
+import dictionary from '../src/dictionary.js';
 
-const dictionary = {
-  greetings: 'Hello, ',
-};
-
+// Приветствие
 console.log('Welcome to the Brain Games!');
-const userName = getNameUser('May I have your name?');
+
+// Зннакомство с игроком
+const userName = getAnswerFromUser('May I have your name?');
 console.log(`${dictionary.greetings}${userName}!`);
