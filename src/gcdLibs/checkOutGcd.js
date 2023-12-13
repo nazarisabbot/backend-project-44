@@ -13,7 +13,7 @@ const checkOutGcd = (num, str) => {
     return a;
   }
 
-  let res = findGcd(num1, num2);
+  let res = +findGcd(num1, num2);
 
   if (res === answer) {
     return {
