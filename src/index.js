@@ -1,5 +1,5 @@
 const game = (options) => {
-  let points = 0;
+  let score = 0;
 
   console.log('Welcome to the Brain Games!');
   const userName = options.createQuestion('May I have your name?');
@@ -20,16 +20,16 @@ const game = (options) => {
 
     if (solution.resAnswer) {
       console.log('Correct!');
-      points += 1;
+      score += 1;
     } else {
       console.log(`${answer}' is wrong answer ;(. Correct answer was ${solution.strAnswer}`);
       console.log(`Let's try again, ${userName}!`);
-      points = 0;
+      score = 0;
     }
 
-    if (points < 3 && points > 0) {
+    if (score < 3 && score > 0) {
       generationOfquestions();
-    } else if (points === 3) {
+    } else if (score === 3) {
       console.log(`Congratulations, ${userName}!`);
     }
   };
