@@ -6,7 +6,7 @@ const randomExpression = () => {
 
   const arrOfOperators = ['+', '-', '*'];
 
-  return `${firstNum} ${arrOfOperators[randomNumber({min: 0, max: 2})]} ${secondNum}`;
+  return `${firstNum} ${arrOfOperators[randomNumber({ min: 0, max: 2 })]} ${secondNum}`;
 };
 
 export default randomExpression;

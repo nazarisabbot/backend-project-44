@@ -1,6 +1,6 @@
 const checkOutExpression = (num, str) => {
   const answer = Number(str);
-  const expession = num.split(" ");
+  const expession = num.split(' ');
 
   let res = 0;
 
@@ -8,27 +8,21 @@ const checkOutExpression = (num, str) => {
 
   switch (operator) {
     case '+':
-      res = Number(num1) + Number(num2)
+      res = Number(num1) + Number(num2);
       break;
     case '-':
-      res = Number(num1) - Number(num2)
+      res = Number(num1) - Number(num2);
       break;
     case '*':
-      res = Number(num1) * Number(num2)
+      res = Number(num1) * Number(num2);
       break;
+    default:
+      res = null;
   }
 
-  if (res === answer) {
-    return {
-      resAnswer: true,
-      strAnswer: res,
-    };
-  } else {
-    return {
-      resAnswer: false,
-      strAnswer: res,
-    };
-  }
+  return {
+    resAnswer: res === answer,
+    strAnswer: res,
+  };
 };
-
 export default checkOutExpression;

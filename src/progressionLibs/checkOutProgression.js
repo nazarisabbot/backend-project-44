@@ -1,29 +1,34 @@
 const checkOutProgression = (num, str) => {
   const answer = Number(str);
-  const expession = num.split(" ");
-  const length = expession.length;
+  const expession = num.split(' ');
+  const { length } = expession;
 
   let res = null;
 
-  for (let i = 0; i < length - 1; i++) {
-    if(expession[i] === '..') {
-      let a = +expession[i - 1];
-      let b = +expession[i + 1];
-      res = (b - a) / 2 + a;
-    } 
- }
+  const colon = expession.indexOf('..');
 
-  if (res === answer) {
-    return {
-      resAnswer: true,
-      strAnswer: res,
-    };
-  } else {
-    return {
-      resAnswer: false,
-      strAnswer: res,
-    };
+  if (colon > 0 && colon !== length - 1) {
+    const a = +expession[colon - 1];
+    const b = +expession[colon + 1];
+    res = (b - a) / 2 + a;
   }
+
+  if (colon === 0) {
+    const a = +expession[colon + 1];
+    const b = +expession[colon + 2];
+    res = (b - a) - a;
+  }
+
+  if (colon === length - 1) {
+    const a = +expession[colon - 2];
+    const b = +expession[colon - 1];
+    res = (b - a) + b;
+  }
+
+  return {
+    resAnswer: res === answer,
+    strAnswer: res,
+  };
 };
 
 export default checkOutProgression;

@@ -1,14 +1,12 @@
 const checkOutPrime = (num, str) => {
   let primeOrNot = true;
 
-  if(num === 1) {
+  if (num === 1) {
     primeOrNot = false;
   }
-  
   if (num === 2) {
     primeOrNot = false;
   }
-
   if (num % 2 === 0) {
     primeOrNot = false;
   }
@@ -17,8 +15,7 @@ const checkOutPrime = (num, str) => {
     if (num % i === 0) {
       primeOrNot = false;
     }
-}
-
+  }
 
   if ((primeOrNot && str.toLowerCase() === 'yes') || (!primeOrNot && str.toLowerCase() === 'no')) {
     return {

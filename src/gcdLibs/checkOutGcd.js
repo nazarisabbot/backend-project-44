@@ -1,31 +1,26 @@
 const checkOutGcd = (num, str) => {
   const answer = Number(str);
-  const expession = num.split(" ");
+  const expession = num.split(' ');
 
   const [num1, num2] = expession;
 
   const findGcd = (a, b) => {
-    while(b) {
-     let temp = b;
-     b = a % b;
-     a = temp;
+    let tempA = a;
+    let tempB = b;
+    while (tempB) {
+      const temp = tempB;
+      tempB = tempA % tempB;
+      tempA = temp;
     }
-    return a;
-  }
+    return tempA;
+  };
 
-  let res = +findGcd(num1, num2);
+  const res = +findGcd(num1, num2);
 
-  if (res === answer) {
-    return {
-      resAnswer: true,
-      strAnswer: res,
-    };
-  } else {
-    return {
-      resAnswer: false,
-      strAnswer: res,
-    };
-  }
+  return {
+    resAnswer: res === answer,
+    strAnswer: res,
+  };
 };
 
 export default checkOutGcd;
