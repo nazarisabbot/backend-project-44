@@ -1,4 +1,7 @@
 ### Hexlet tests and linter status:
+<a href="https://codeclimate.com/github/nazarisabbot/backend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/6ed0fd9d1c21ece9fd69/maintainability" /></a>
+
+
 [![Actions Status](https://github.com/nazarisabbot/backend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nazarisabbot/backend-project-44/actions)
 
 [![asciicast](https://asciinema.org/a/j2tMNvl9cK2Cwp0naSBS3z4wY.png)](https://asciinema.org/a/j2tMNvl9cK2Cwp0naSBS3z4wY)
