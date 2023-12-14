@@ -5,12 +5,13 @@ import dictionary from '../../src/dictionary.js';
 import randomNumber from '../../src/evenLibs/generateRandomNum.js';
 import checkOutEven from '../../src/evenLibs/checkOutEven.js';
 
+// Определение объекта с параметрами для функции
 const options = {
-  greetings: dictionary.greetings,
-  createQuestion: getAnswerFromUser,
-  conditional: dictionary.even,
-  generateFun: randomNumber,
-  result: checkOutEven,
+  greetings: dictionary.greetings, // Приветствие
+  createQuestion: getAnswerFromUser, // Функция запроса данных от пользователя
+  conditional: dictionary.even, // Условия задачи
+  generateFun: randomNumber, // Функция генерации числа
+  result: checkOutEven, // Функция проверки ответа
 };
 
 game(options);
