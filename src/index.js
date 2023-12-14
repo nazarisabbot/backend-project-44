@@ -22,7 +22,8 @@ const game = (options) => {
       console.log('Correct!');
       score += 1;
     } else {
-      console.log(`${answer}' is wrong answer ;(. Correct answer was ${solution.strAnswer}.\nLet's try again, ${userName}`);
+      console.log(`${answer}' is wrong answer ;(. Correct answer was ${solution.strAnswer}`);
+      console.log(`Let's try again, ${userName}`);
       score = 0;
     }
 
