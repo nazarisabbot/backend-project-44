@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-// Функция запроса данных от пользователя
-const getAnswerFromUser = (answer) => {
-  const name = readlineSync.question(answer);
+
+const getAnswerFromUser = () => {
+  const name = readlineSync.question('May I have your name?');
   return name;
 };
 

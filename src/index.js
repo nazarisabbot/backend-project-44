@@ -1,60 +1,33 @@
-// Определение функции game с параметром options
-const game = (options) => {
-  // Переменная счета игры, если значение равно трем - игра считается выигранной
-  let score = 0;
+import readlineSync from 'readline-sync';
 
-  // Вывод приветствия в консоль
+const startGame = (game, description) => {
   console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name?');
+  console.log(`Hello, ${userName}`);
+  console.log(`${description}`);
 
-  // Запрос имени пользователя с использованием функции createQuestion из объекта options
-  const userName = options.createQuestion('May I have your name?');
-  // Вывод приветствия с именем пользователя в консоль
-  console.log(`${options.greetings}${userName}!`);
+  let winnings = 0;
 
-  // Если задано условие (conditional), выводим его в консоль
-  if (options.conditional !== undefined) {
-    console.log(`${options.conditional}`);
-  }
+  while (winnings < 3) {
+    const { question, answer } = game();
 
-  // Функция генерации вопросов и проверки ответов
-  const generationOfquestions = () => {
-    // Генерация примера с использованием функции generateFun из объекта options
-    const example = options.generateFun();
-    // Вывод вопроса в консоль
-    console.log(`Question: ${example}`);
-    // Запрос ответа пользователя с использованием функции createQuestion из объекта options
-    const answer = options.createQuestion();
+    console.log(`Question: ${question}`);
+    const resultFromUser = readlineSync.question();
+    console.log(`Your answer: ${resultFromUser}`);
 
-    // Вычисление правильного ответа с использованием функции result из объекта options
-    const solution = options.result(example, answer);
-
-    // Вывод ответа пользователя в консоль
-    console.log(`Your answer: ${answer}`);
-
-    // Проверка правильности ответа и обновление счета
-    if (solution.resAnswer) {
+    if (answer === resultFromUser) {
       console.log('Correct!');
-      score += 1;
+      winnings += 1;
     } else {
-      // Вывод сообщения об ошибке и правильного ответа в случае неверного ответа
-      console.log(`${answer}' is wrong answer ;(. Correct answer was ${solution.strAnswer}`);
-      console.log(`Let's try again, ${userName}!`);
-      // Сброс счета при неверном ответе
-      score = 0;
+      console.log(`'${resultFromUser}' is wrong answer ;(. Correct answer was '${answer}'`);
+      console.log(`Let's try again, Bill! ${userName}`);
+      return;
     }
 
-    // Рекурсивный вызов функции generationOfquestions до достижения счета 3
-    if (score < 3 && score > 0) {
-      generationOfquestions();
-    } else if (score === 3) {
-      // Вывод поздравления при достижении счета 3
+    if (winnings === 3) {
       console.log(`Congratulations, ${userName}!`);
     }
-  };
-
-  // Начало выполнения игры вызовом функции generationOfquestions
-  generationOfquestions();
+  }
 };
 
-// Экспорт функции game по умолчанию
-export default game;
+export default startGame;
