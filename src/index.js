@@ -20,7 +20,7 @@ const startGame = (game, description) => {
       winnings += 1;
     } else {
       console.log(`'${resultFromUser}' is wrong answer ;(. Correct answer was '${answer}'`);
-      console.log(`Let's try again, Bill! ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
 
