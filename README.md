@@ -3,6 +3,8 @@
 
 <!-- [![Lint](https://github.com/nazarisabbot/backend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nazarisabbot/backend-project-44/actions/workflows/hexlet-check.yml) -->
 
+[![Actions Status](https://github.com/nazarisabbot/backend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nazarisabbot/backend-project-44/actions)
+
 # Коллекция Консольных Игр
 
 Данный пакет представляет собой увлекательную коллекцию консольных игр, созданных для развития логического мышления и развлечения. Включены следующие игры:
@@ -31,9 +33,6 @@
 - `brain-prime`
 
 ## Приятного времяпрепровождения и удачи в разгадывании заданий! 🎮✨
-
-
-[![Actions Status](https://github.com/nazarisabbot/backend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nazarisabbot/backend-project-44/actions)
 
 [![asciicast](https://asciinema.org/a/j2tMNvl9cK2Cwp0naSBS3z4wY.png)](https://asciinema.org/a/j2tMNvl9cK2Cwp0naSBS3z4wY)
 
