@@ -3,7 +3,7 @@ function gamePrime() {
 
   let primeOrNot = true;
 
-  if (num === 1 || num === 2) {
+  if (num === 1) {
     primeOrNot = false;
   }
 
