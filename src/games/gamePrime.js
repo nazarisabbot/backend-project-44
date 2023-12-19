@@ -12,6 +12,10 @@ function gamePrime() {
     primeOrNot = false;
   }
 
+  if (num === 2) {
+    primeOrNot = true;
+  }
+
   if (num % 2 === 0) {
     primeOrNot = false;
   }
