@@ -1,7 +1,12 @@
-function gameEven() {
+import runEngine from '../index.js';
+import getRandomNum from '../getRandomNum.js';
+
+const rules = 'What is the result of the expression?';
+
+function gameCalc() {
   let res = null;
-  const firstNum = Math.floor(1 + Math.random() * (100 + 1 - 1));
-  const secondNum = Math.floor(1 + Math.random() * (100 + 1 - 1));
+  const firstNum = getRandomNum({ min: 1, max: 100 });
+  const secondNum = getRandomNum({ min: 1, max: 100 });
 
   const arrOfOperators = ['+', '-', '*'];
   const selectedOperator = arrOfOperators[Math.floor(0 + Math.random() * (2 + 0 - 0))];
@@ -22,10 +27,7 @@ function gameEven() {
       return null;
   }
 
-  return {
-    question: expression,
-    answer: String(res),
-  };
+  return [expression, String(res)];
 }
 
-export default gameEven;
+export default () => runEngine(gameCalc, rules);

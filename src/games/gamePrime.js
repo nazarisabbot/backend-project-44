@@ -1,5 +1,10 @@
+import runEngine from '../index.js';
+import getRandomNum from '../getRandomNum.js';
+
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 function gamePrime() {
-  const num = Math.floor(1 + Math.random() * (100 + 1 - 1));
+  const num = getRandomNum({ min: 1, max: 100 });
 
   let primeOrNot = true;
 
@@ -17,10 +22,9 @@ function gamePrime() {
     }
   }
 
-  return {
-    question: num,
-    answer: primeOrNot ? 'yes' : 'no',
-  };
+  const trueStr = primeOrNot ? 'yes' : 'no';
+
+  return [num, trueStr];
 }
 
-export default gamePrime;
+export default () => runEngine(gamePrime, rules);
