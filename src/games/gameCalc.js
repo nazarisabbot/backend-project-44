@@ -9,7 +9,7 @@ function gameCalc() {
   const secondNum = getRandomNum({ min: 1, max: 100 });
 
   const arrOfOperators = ['+', '-', '*'];
-  const selectedOperator = arrOfOperators[Math.floor(0 + Math.random() * (2 + 0 - 0))];
+  const selectedOperator = arrOfOperators[getRandomNum({ min: 0, max: 2 })];
 
   const expression = `${firstNum} ${selectedOperator} ${secondNum}`;
 
