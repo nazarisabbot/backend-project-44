@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import winningsScore from './winningsScore.js';
 
 const startGame = (game, description) => {
   console.log('Welcome to the Brain Games!');
@@ -6,7 +7,7 @@ const startGame = (game, description) => {
   console.log(`Hello, ${userName}`);
   console.log(`${description}`);
 
-  for (let winnings = 0; winnings < 3; winnings += 1) {
+  for (let winnings = winningsScore; winnings < 3; winnings += 1) {
     const [question, answer] = game();
 
     console.log(`Question: ${question}`);

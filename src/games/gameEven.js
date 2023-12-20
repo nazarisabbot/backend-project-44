@@ -4,12 +4,10 @@ import getRandomNum from '../getRandomNum.js';
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function gameEven() {
-  const number = getRandomNum({ min: 1, max: 50 });
-  const evenOrNot = number % 2 === 0;
+  const number = getRandomNum(1, 50);
+  const evenOrNot = number % 2 === 0 ? 'yes' : 'no';
 
-  const trueStr = evenOrNot ? 'yes' : 'no';
-
-  return [number, trueStr];
+  return [number, evenOrNot];
 }
 
 export default () => runEngine(gameEven, rules);
