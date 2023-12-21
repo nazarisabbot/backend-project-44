@@ -1,4 +1,4 @@
-const primeOrNot = (num) => {
+const isPrime = (num) => {
   let res = true;
 
   if (num === 1) {
@@ -22,4 +22,4 @@ const primeOrNot = (num) => {
   return res;
 };
 
-export default primeOrNot;
+export default isPrime;

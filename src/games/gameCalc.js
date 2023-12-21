@@ -1,12 +1,23 @@
 import runEngine from '../index.js';
 import getRandomNum from '../getRandomNum.js';
-import arrOfOperators from '../arrOfOperators.js';
-import canculation from '../canculation.js';
 
 const rules = 'What is the result of the expression?';
+const arrOfOperators = ['+', '-', '*'];
+
+const getSum = (operator, num1, num2) => {
+  switch (operator) {
+    case '+':
+      return Number(num1) + Number(num2);
+    case '-':
+      return Number(num1) - Number(num2);
+    case '*':
+      return Number(num1) * Number(num2);
+    default:
+      throw new Error(`operation ${operator} is not supported`);
+  }
+};
 
 function gameCalc() {
-  // let res = null;
   const firstNum = getRandomNum(1, 100);
   const secondNum = getRandomNum(1, 100);
 
@@ -14,7 +25,7 @@ function gameCalc() {
 
   const expression = `${firstNum} ${selectedOperator} ${secondNum}`;
 
-  const res = canculation(selectedOperator, firstNum, secondNum);
+  const res = getSum(selectedOperator, firstNum, secondNum);
 
   return [expression, String(res)];
 }
