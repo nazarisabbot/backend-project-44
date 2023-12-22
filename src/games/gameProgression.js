@@ -5,10 +5,10 @@ const rules = 'What number is missing in the progression?';
 const length = getRandomNum(25, 35);
 const step = getRandomNum(2, 5);
 
-const getProgression = (length1, step1) => {
+const getProgression = (lengthOfArr, stepThroughArray) => {
   const arr = [];
 
-  for (let i = 0; i < length1 + 1; i += step1) {
+  for (let i = 0; i < lengthOfArr + 1; i += stepThroughArray) {
     arr.push(i);
   }
 
